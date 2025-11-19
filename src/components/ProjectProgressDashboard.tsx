@@ -80,77 +80,77 @@ export default function ProjectProgressDashboard() {
   const milestones: ProjectMilestone[] = [
     {
       id: "1",
-      title: "Synthetic Data Engine Development",
-      description: "Build Digital Earth Twins generator with physics-based forward modeling",
+      title: "Oil & Gas Data Connectors",
+      description: "Integrate Schlumberger, IHS Markit, and enhanced satellite processing for hydrocarbon data",
       dueDate: "2024-02-28",
       status: "in_progress",
-      progress: 75,
+      progress: 85,
       dependencies: ["Cloud Infrastructure Setup"],
-      deliverables: ["50,000 synthetic scenarios", "Physics models", "Validation framework"],
-      budget: 250000,
-      spent: 187500
+      deliverables: ["Schlumberger Integration", "IHS Markit Database", "Hyperion/ASTER Processing"],
+      budget: 350000,
+      spent: 297500
     },
     {
       id: "2",
-      title: "GACD Architecture Implementation",
-      description: "Design and populate federated data repository with anonymization pipeline",
+      title: "Hydrocarbon Feature Engineering",
+      description: "Build geological indices for reservoir quality, source rock, seal integrity, and trap analysis",
       dueDate: "2024-03-15",
       status: "in_progress",
-      progress: 60,
-      dependencies: ["Data Partnership Agreements"],
-      deliverables: ["Data repository", "Anonymization pipeline", "Blockchain provenance"],
-      budget: 175000,
-      spent: 105000
+      progress: 70,
+      dependencies: ["Data Connectors"],
+      deliverables: ["Reservoir Quality Indicators", "Source Rock Assessment", "Seal Integrity Metrics"],
+      budget: 275000,
+      spent: 192500
     },
     {
       id: "3",
-      title: "PI-GAN Model Development",
-      description: "Physics-Informed GAN for 3D structure generation",
+      title: "Enhanced AI Architecture",
+      description: "Petroleum System Integrator, Reserve Estimation Engine, and Risk Assessment Module",
       dueDate: "2024-04-30",
       status: "pending",
-      progress: 25,
-      dependencies: ["Synthetic Data Engine"],
-      deliverables: ["Trained model", "Validation results", "Documentation"],
-      budget: 320000,
-      spent: 80000
+      progress: 55,
+      dependencies: ["Feature Engineering"],
+      deliverables: ["Petroleum System Integrator", "Reserve Estimation Engine", "Risk Assessment Module"],
+      budget: 420000,
+      spent: 231000
     },
     {
       id: "4",
-      title: "Cloud Infrastructure Deployment",
-      description: "Kubernetes-based microservices architecture for scaling",
-      dueDate: "2024-02-15",
-      status: "completed",
-      progress: 100,
-      dependencies: [],
-      deliverables: ["Production environment", "Monitoring systems", "CI/CD pipeline"],
-      budget: 150000,
-      spent: 142000
+      title: "Unified Platform Interface",
+      description: "Play-Based Exploration, Prospect Evaluation, and Portfolio Management workflows",
+      dueDate: "2024-05-30",
+      status: "pending",
+      progress: 40,
+      dependencies: ["AI Architecture"],
+      deliverables: ["Play-Based Exploration", "Prospect Evaluation", "Portfolio Management"],
+      budget: 250000,
+      spent: 100000
     }
   ];
 
   const kpis: KPI[] = [
     {
-      name: "Deposit Recall Rate",
-      current: 85.1,
-      target: 85.0,
+      name: "Oil Prospects Identified",
+      current: 47,
+      target: 50,
+      unit: "prospects",
+      trend: "up",
+      status: "good",
+      category: "technical"
+    },
+    {
+      name: "Reserve Accuracy",
+      current: 89.7,
+      target: 90.0,
       unit: "%",
       trend: "up",
       status: "good",
       category: "technical"
     },
     {
-      name: "False Positive Rate",
-      current: 12.7,
-      target: 15.0,
-      unit: "%",
-      trend: "down",
-      status: "good",
-      category: "technical"
-    },
-    {
-      name: "Processing Speed",
-      current: 48,
-      target: 48,
+      name: "Basin Analysis Speed",
+      current: 24,
+      target: 24,
       unit: "hrs",
       trend: "stable",
       status: "good",
@@ -158,7 +158,7 @@ export default function ProjectProgressDashboard() {
     },
     {
       name: "Budget Utilization",
-      current: 68.4,
+      current: 71.2,
       target: 75.0,
       unit: "%",
       trend: "up",
@@ -166,19 +166,19 @@ export default function ProjectProgressDashboard() {
       category: "financial"
     },
     {
-      name: "Team Productivity",
-      current: 87.3,
-      target: 85.0,
+      name: "AI Model Performance",
+      current: 91.3,
+      target: 90.0,
       unit: "%",
       trend: "up",
       status: "good",
-      category: "operational"
+      category: "technical"
     },
     {
-      name: "Data Volume Processed",
-      current: 1.2,
-      target: 1.0,
-      unit: "M km²",
+      name: "Data Sources Integrated",
+      current: 8,
+      target: 8,
+      unit: "sources",
       trend: "up",
       status: "good",
       category: "technical"

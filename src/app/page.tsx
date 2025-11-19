@@ -32,7 +32,11 @@ import {
   Eye,
   Map,
   Projector,
-  FileText
+  FileText,
+  Droplet,
+  Search,
+  Calculator,
+  DollarSign
 } from "lucide-react";
 
 export default function OSIDashboard() {
@@ -57,90 +61,90 @@ export default function OSIDashboard() {
 
   const projectPhases = [
     {
-      phase: "Phase 1: Data Ecosystem",
-      progress: 75,
+      phase: "Phase 1: Oil & Gas Data Connectors",
+      progress: 85,
       status: "active",
       timeline: "Months 1-4",
-      tasks: ["Synthetic Data Engine", "GACD Architecture", "Data Pipeline"],
-      color: "bg-blue-500"
-    },
-    {
-      phase: "Phase 2: AI Engine",
-      progress: 45,
-      status: "active", 
-      timeline: "Months 3-8",
-      tasks: ["Data Fusion Engine", "Cascaded AI Architecture", "Model Training"],
-      color: "bg-purple-500"
-    },
-    {
-      phase: "Phase 3: Validation Framework",
-      progress: 20,
-      status: "pending",
-      timeline: "Months 7-10", 
-      tasks: ["Tiered Verification", "Active Learning Loop"],
+      tasks: ["Schlumberger Integration", "IHS Markit Database", "Satellite Processing"],
       color: "bg-orange-500"
     },
     {
-      phase: "Phase 4: Platform Integration",
-      progress: 10,
+      phase: "Phase 2: Hydrocarbon Feature Engineering",
+      progress: 70,
+      status: "active", 
+      timeline: "Months 3-8",
+      tasks: ["Reservoir Quality Indicators", "Source Rock Assessment", "Seal Integrity Metrics"],
+      color: "bg-blue-500"
+    },
+    {
+      phase: "Phase 3: Enhanced AI Architecture",
+      progress: 55,
+      status: "pending",
+      timeline: "Months 7-10", 
+      tasks: ["Petroleum System Integrator", "Reserve Estimation Engine", "Risk Assessment Module"],
+      color: "bg-purple-500"
+    },
+    {
+      phase: "Phase 4: Unified Platform Interface",
+      progress: 40,
       status: "pending",
       timeline: "Months 9-12",
-      tasks: ["Cloud Infrastructure", "UI Development", "Deployment"],
+      tasks: ["Play-Based Exploration", "Prospect Evaluation", "Portfolio Management"],
       color: "bg-green-500"
     }
   ];
 
   const keyMetrics = [
     { 
-      label: "Known Deposits Identified", 
-      value: "127", 
-      change: "+12%", 
-      icon: Target,
-      color: "text-green-600"
+      label: "Oil Prospects Identified", 
+      value: "47", 
+      change: "+23%", 
+      icon: Droplet,
+      color: "text-orange-600"
     },
     { 
-      label: "Processing Speed", 
-      value: "48 hrs", 
-      change: "-25%", 
-      icon: Zap,
+      label: "Gas Reserves (BCF)", 
+      value: "2.8", 
+      change: "+45%", 
+      icon: Activity,
       color: "text-blue-600"
     },
     { 
-      label: "Model Accuracy", 
-      value: "87.3%", 
-      change: "+5.2%", 
+      label: "AI Model Accuracy", 
+      value: "89.7%", 
+      change: "+6.2%", 
       icon: Brain,
       color: "text-purple-600"
     },
     { 
-      label: "Data Processed", 
-      value: "1.2M km²", 
-      change: "+180%", 
-      icon: Database,
-      color: "text-orange-600"
+      label: "Basins Analyzed", 
+      value: "12", 
+      change: "+150%", 
+      icon: Globe,
+      color: "text-green-600"
     }
   ];
 
   const activeProjects = [
     {
-      name: "Orogenic Gold Model",
-      type: "AI Training",
+      name: "Permian Basin Analysis",
+      type: "Oil & Gas",
       status: "In Progress",
-      progress: 68,
+      progress: 78,
       deadline: "2024-03-15"
     },
     {
-      name: "Synthetic Data Generation",
-      type: "Data Pipeline", 
+      name: "Gulf of Mexico Prospects",
+      type: "Deepwater", 
       status: "Active",
-      progress: 85,
+      progress: 65,
       deadline: "2024-02-28"
     },
     {
-      name: "GACD Integration",
-      type: "Database",
+      name: "Eagle Ford Shale Evaluation",
+      type: "Unconventional",
       status: "Testing",
-      progress: 42,
+      progress: 52,
       deadline: "2024-03-30"
     }
   ];
@@ -154,9 +158,9 @@ export default function OSIDashboard() {
             <div>
               <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-3">
                 <Satellite className="w-8 h-8 text-blue-600" />
-                Project Aurora 2.0
+                Aurora OSI v2.0 - Oil & Gas Edition
               </h1>
-              <p className="text-slate-600 mt-2">Orbital Subsurface Intelligence (OSI) Platform</p>
+              <p className="text-slate-600 mt-2">Unified Platform for Mineral & Hydrocarbon Discovery</p>
             </div>
             <div className="flex items-center gap-3">
               <Badge variant="secondary" className="text-sm px-3 py-1">
@@ -242,9 +246,9 @@ export default function OSIDashboard() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Activity className="w-5 h-5" />
-                    Active Projects
+                    Active Oil & Gas Projects
                   </CardTitle>
-                  <CardDescription>Currently running OSI platform components</CardDescription>
+                  <CardDescription>Currently running petroleum exploration projects</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {activeProjects.map((project, index) => (
@@ -270,15 +274,15 @@ export default function OSIDashboard() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Shield className="w-5 h-5" />
-                    System Health
+                    Oil & Gas System Health
                   </CardTitle>
-                  <CardDescription>Platform performance and status</CardDescription>
+                  <CardDescription>Platform performance and petroleum system status</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center p-4 bg-green-50 rounded-lg">
                       <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
-                      <p className="font-medium text-green-900">Data Pipeline</p>
+                      <p className="font-medium text-green-900">Data Connectors</p>
                       <p className="text-sm text-green-700">Operational</p>
                     </div>
                     <div className="text-center p-4 bg-blue-50 rounded-lg">
@@ -286,15 +290,15 @@ export default function OSIDashboard() {
                       <p className="font-medium text-blue-900">AI Models</p>
                       <p className="text-sm text-blue-700">Training</p>
                     </div>
-                    <div className="text-center p-4 bg-yellow-50 rounded-lg">
-                      <Database className="w-8 h-8 text-yellow-600 mx-auto mb-2" />
-                      <p className="font-medium text-yellow-900">Storage</p>
-                      <p className="text-sm text-yellow-700">78% Used</p>
+                    <div className="text-center p-4 bg-orange-50 rounded-lg">
+                      <Droplet className="w-8 h-8 text-orange-600 mx-auto mb-2" />
+                      <p className="font-medium text-orange-900">Reservoir Analysis</p>
+                      <p className="text-sm text-orange-700">Active</p>
                     </div>
                     <div className="text-center p-4 bg-purple-50 rounded-lg">
                       <BarChart3 className="w-8 h-8 text-purple-600 mx-auto mb-2" />
-                      <p className="font-medium text-purple-900">Analytics</p>
-                      <p className="text-sm text-purple-700">Active</p>
+                      <p className="font-medium text-purple-900">Risk Assessment</p>
+                      <p className="text-sm text-purple-700">Running</p>
                     </div>
                   </div>
                 </CardContent>

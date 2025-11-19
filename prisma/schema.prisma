@@ -17,16 +17,169 @@ model User {
   id        String   @id @default(cuid())
   email     String   @unique
   name      String?
+  role      String   @default("user")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  
+  // Relations
+  projects Project[]
+  analyses OilGasAnalysis[]
 }
 
-model Post {
-  id        String   @id @default(cuid())
-  title     String
-  content   String?
-  published Boolean  @default(false)
-  authorId  String
+model Project {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  type        String   // "mineral" or "oil_gas"
+  status      String   @default("active")
+  location    String?
+  basin       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+  
+  // Oil & Gas specific relations
+  wells            Well[]
+  seismicSurveys   SeismicSurvey[]
+  reservoirs       Reservoir[]
+  analyses         OilGasAnalysis[]
+}
+
+// Oil & Gas Specific Models
+model Well {
+  id              String   @id @default(cuid())
+  name            String
+  apiNumber       String?  // American Petroleum Institute number
+  latitude        Float
+  longitude       Float
+  totalDepth      Float?   // in feet
+  wellType        String   // "exploration", "development", "injection"
+  status          String   // "active", "plugged", "abandoned"
+  spudDate        DateTime?
+  completionDate  DateTime?
+  
+  // Production data
+  oilProduction   Float?   // barrels per day
+  gasProduction   Float?   // cubic feet per day
+  waterProduction Float?   // barrels per day
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id])
+  
+  analyses OilGasAnalysis[]
+}
+
+model SeismicSurvey {
+  id          String   @id @default(cuid())
+  name        String
+  surveyType  String   // "2D", "3D", "4D"
+  area        Float    // square kilometers
+  resolution  Float?   // in meters
+  acquisitionDate DateTime?
+  
+  // Processing parameters
+  processingLevel String  // "raw", "migrated", "interpreted"
+  frequencyRange  String?  // "10-80Hz", etc.
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id])
+}
+
+model Reservoir {
+  id            String   @id @default(cuid())
+  name          String
+  latitude      Float
+  longitude     Float
+  depth         Float?   // in feet
+  thickness     Float?   // in feet
+  area          Float?   // in acres
+  
+  // Rock properties
+  porosity      Float?   // percentage
+  permeability  Float?   // millidarcies
+  waterSaturation Float? // percentage
+  
+  // Fluid properties
+  oilGravity    Float?   // API degrees
+  gasOilRatio   Float?   // scf/bbl
+  
+  // Reservoir classification
+  reservoirType String  // "conventional", "unconventional", "tight", "shale"
+  trapType      String  // "structural", "stratigraphic", "combination"
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  // Relations
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id])
+}
+
+model OilGasAnalysis {
+  id              String   @id @default(cuid())
+  name            String
+  analysisType    String   // "prospect_evaluation", "reserve_estimation", "risk_assessment"
+  
+  // Geological indices
+  reservoirQuality   Float?  // 0-100 score
+  sourceRockQuality  Float?  // 0-100 score
+  sealIntegrity      Float?  // 0-100 score
+  trapConfiguration  Float?  // 0-100 score
+  
+  // Resource estimates
+  oilInPlace         Float?  // million barrels
+  gasInPlace         Float?  // billion cubic feet
+  recoverableOil     Float?  // million barrels
+  recoverableGas     Float?  // billion cubic feet
+  
+  // Risk assessment
+  geologicalRisk     Float?  // 0-100 (higher = riskier)
+  economicRisk       Float?  // 0-100
+  technicalRisk      Float?  // 0-100
+  
+  // Confidence levels
+  confidenceWithoutSeismic Float? // percentage
+  confidenceWithSeismic     Float? // percentage
+  
+  // AI model predictions
+  aiModelVersion     String?
+  predictionAccuracy Float?  // percentage
+  
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  
+  // Relations
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+  
+  projectId String?
+  project   Project? @relation(fields: [projectId], references: [id])
+  
+  wellId String?
+  well   Well?   @relation(fields: [wellId], references: [id])
+}
+
+model DataSource {
+  id          String   @id @default(cuid())
+  name        String
+  type        String   // "satellite", "seismic", "well", "production", "geochemical"
+  provider    String   // "schlumberger", "ihs_markit", "nasa", "esa", etc.
+  url         String?
+  apiKey      String?
+  status      String   @default("active")
+  lastSync    DateTime?
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
