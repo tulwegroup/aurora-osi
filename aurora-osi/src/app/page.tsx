@@ -166,7 +166,7 @@ export default function OSIDashboard() {
             <div>
               <h1 className="text-4xl font-bold text-transparent bg-clip-text text-gradient-to-r from-blue-600 to-purple-600 bg-gradient-to-r">
                 <Satellite className="w-10 h-10 inline-block mr-3 text-blue-600" />
-                Project Aurora 3.0
+                Aurora-OSI 3.0
               </h1>
               <p className="text-slate-300 mt-2 text-lg">Next-Generation OSI Platform with AI & Quantum Capabilities</p>
             </div>
