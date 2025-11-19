@@ -1,141 +1,316 @@
-# 🚀 Welcome to Z.ai Code Scaffold
+# Project Aurora 2.0: Orbital Subsurface Intelligence (OSI) Platform
 
-A modern, production-ready web application scaffold powered by cutting-edge technologies, designed to accelerate your development with [Z.ai](https://chat.z.ai)'s AI-powered coding assistance.
+A comprehensive Next.js platform for mineral exploration using AI-powered satellite data analysis and 3D geological modeling.
 
-## ✨ Technology Stack
+## 🎯 Mission
 
-This scaffold provides a robust foundation built with:
+Build a functional prototype OSI platform that generates 3D mineral prospectivity models with quantified uncertainty, using only satellite data as input, validated against known deposits.
 
-### 🎯 Core Framework
-- **⚡ Next.js 15** - The React framework for production with App Router
-- **📘 TypeScript 5** - Type-safe JavaScript for better developer experience
-- **🎨 Tailwind CSS 4** - Utility-first CSS framework for rapid UI development
+## 🚀 Success Metrics (12-Month MVP)
 
-### 🧩 UI Components & Styling
-- **🧩 shadcn/ui** - High-quality, accessible components built on Radix UI
-- **🎯 Lucide React** - Beautiful & consistent icon library
-- **🌈 Framer Motion** - Production-ready motion library for React
-- **🎨 Next Themes** - Perfect dark mode in 2 lines of code
+- **>85% recall rate** on identifying known gold deposits in blind tests
+- **<15% false positive rate** in mature geological terrains
+- **Probabilistic resource estimates** within 30% of actual drilled tonnage
+- **Explainable AI reasoning** validated as "geologically plausible"
+- **100,000 km² regional assessment** within 48 hours on cloud infrastructure
 
-### 📋 Forms & Validation
-- **🎣 React Hook Form** - Performant forms with easy validation
-- **✅ Zod** - TypeScript-first schema validation
+## 🏗️ Architecture Overview
 
-### 🔄 State Management & Data Fetching
-- **🐻 Zustand** - Simple, scalable state management
-- **🔄 TanStack Query** - Powerful data synchronization for React
-- **🌐 Axios** - Promise-based HTTP client
+### Core Components
 
-### 🗄️ Database & Backend
-- **🗄️ Prisma** - Next-generation Node.js and TypeScript ORM
-- **🔐 NextAuth.js** - Complete open-source authentication solution
+1. **Main Dashboard** (`src/app/page.tsx`)
+   - Central hub with navigation to all platform modules
+   - Real-time KPI monitoring and project status
+   - Interactive tabs for different functional areas
 
-### 🎨 Advanced UI Features
-- **📊 TanStack Table** - Headless UI for building tables and datagrids
-- **🖱️ DND Kit** - Modern drag and drop toolkit for React
-- **📊 Recharts** - Redefined chart library built with React and D3
-- **🖼️ Sharp** - High performance image processing
+2. **3D Geological Visualization** (`src/components/GeologicalVisualization.tsx`)
+   - Interactive 3D models using Three.js and React Three Fiber
+   - Real-time rendering of geological layers and deposits
+   - Confidence visualization and fault line mapping
 
-### 🌍 Internationalization & Utilities
-- **🌍 Next Intl** - Internationalization library for Next.js
-- **📅 Date-fns** - Modern JavaScript date utility library
-- **🪝 ReactUse** - Collection of essential React hooks for modern development
+3. **Data Fusion Interface** (`src/components/DataFusionInterface.tsx`)
+   - Multi-sensor satellite data processing pipeline
+   - Real-time monitoring of data streams
+   - Quality control and validation metrics
 
-## 🎯 Why This Scaffold?
+4. **AI Model Dashboard** (`src/components/AIModelDashboard.tsx`)
+   - Real-time monitoring of AI model performance
+   - Training progress and validation metrics
+   - Resource usage and system health monitoring
 
-- **🏎️ Fast Development** - Pre-configured tooling and best practices
-- **🎨 Beautiful UI** - Complete shadcn/ui component library with advanced interactions
-- **🔒 Type Safety** - Full TypeScript configuration with Zod validation
-- **📱 Responsive** - Mobile-first design principles with smooth animations
-- **🗄️ Database Ready** - Prisma ORM configured for rapid backend development
-- **🔐 Auth Included** - NextAuth.js for secure authentication flows
-- **📊 Data Visualization** - Charts, tables, and drag-and-drop functionality
-- **🌍 i18n Ready** - Multi-language support with Next Intl
-- **🚀 Production Ready** - Optimized build and deployment settings
-- **🤖 AI-Friendly** - Structured codebase perfect for AI assistance
+5. **Consortium Management** (`src/components/ConsortiumManagement.tsx`)
+   - Global Analog Consortium Database (GACD) administration
+   - Member management and data contribution tracking
+   - Anonymization and data provenance
 
-## 🚀 Quick Start
+6. **Project Progress Tracking** (`src/components/ProjectProgressDashboard.tsx`)
+   - Milestone tracking and KPI monitoring
+   - Team productivity and resource allocation
+   - Budget utilization and timeline management
+
+### API Endpoints
+
+1. **Main API** (`src/app/api/route.ts`)
+   - Model inference and processing requests
+   - Integration with ZAI SDK for AI capabilities
+   - Synthetic data generation and validation
+
+2. **Geological API** (`src/app/api/geological/route.ts`)
+   - 3D geological model generation
+   - Deposit identification and prospectivity analysis
+   - Structural analysis and interpretation
+
+3. **Consortium API** (`src/app/api/consortium/route.ts`)
+   - Member management and data submissions
+   - Data validation and anonymization
+   - Analytics and reporting
+
+## 🛠️ Technology Stack
+
+### Frontend
+- **Next.js 15** with App Router
+- **TypeScript 5** for type safety
+- **Tailwind CSS 4** with shadcn/ui components
+- **Three.js + React Three Fiber** for 3D visualization
+- **Framer Motion** for animations
+- **Recharts** for data visualization
+
+### Backend
+- **Next.js API Routes** for serverless functions
+- **ZAI Web Development SDK** for AI integration
+- **Prisma ORM** with SQLite for data persistence
+
+### Key Libraries
+- `@react-three/fiber` & `@react-three/drei` - 3D graphics
+- `plotly.js` & `react-plotly.js` - Advanced charts
+- `d3` - Data visualization utilities
+- `zustand` - State management
+- `@tanstack/react-query` - Server state management
+
+## 📊 Features
+
+### 🎛️ Main Dashboard
+- **Real-time KPI Monitoring**: Track deposit recall rates, false positives, processing speed
+- **Project Phase Tracking**: Visual progress through 4 implementation phases
+- **System Health Monitoring**: GPU usage, memory, training queue status
+- **Active Project Management**: Track ongoing tasks and deadlines
+
+### 🌍 3D Geological Visualization
+- **Interactive 3D Models**: Explore geological layers and structures
+- **Deposit Visualization**: Color-coded confidence levels
+- **Fault Line Mapping**: Structural geology interpretation
+- **Real-time Controls**: Rotation, zoom, and layer toggling
+
+### 🔄 Data Fusion Pipeline
+- **Multi-sensor Integration**: Sentinel-1/2, ASTER, gravity, magnetic data
+- **Real-time Processing**: Monitor data stream status and quality
+- **Quality Control**: Automated validation and metrics tracking
+- **AI-powered Feature Engineering**: Physics-guided feature extraction
+
+### 🧠 AI Model Monitoring
+- **Model Performance Tracking**: Accuracy, precision, recall, F1 scores
+- **Training Progress**: Real-time loss and accuracy monitoring
+- **Resource Management**: GPU, memory, and storage utilization
+- **Validation Metrics**: Cross-validation and test set performance
+
+### 👥 Consortium Management
+- **Member Administration**: Tier-based access and contributions
+- **Data Repository**: Anonymized deposit database with provenance
+- **Quality Assurance**: Data validation and completeness scoring
+- **Analytics Dashboard**: Regional distribution and growth metrics
+
+### 📈 Project Progress
+- **Milestone Tracking**: Progress toward key deliverables
+- **KPI Dashboard**: Technical, financial, and operational metrics
+- **Team Productivity**: Task completion and efficiency monitoring
+- **Budget Management**: Resource allocation and utilization
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn package manager
+
+### Installation
+
+1. **Clone and setup**
+   ```bash
+   git clone <repository-url>
+   cd project-aurora-2.0
+   npm install
+   ```
+
+2. **Database setup**
+   ```bash
+   npm run db:push
+   npm run db:generate
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Access the application**
+   - Open [http://localhost:3000](http://localhost:3000)
+   - The platform will be available with all features active
+
+### Development Commands
 
 ```bash
-# Install dependencies
-npm install
+# Development
+npm run dev          # Start development server
+npm run lint          # Run ESLint
+npm run build         # Build for production
 
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
+# Database
+npm run db:push      # Push schema to database
+npm run db:generate   # Generate Prisma client
+npm run db:migrate    # Run migrations
+npm run db:reset      # Reset database
 ```
-
-Open [http://localhost:3000](http://localhost:3000) to see your application running.
-
-## 🤖 Powered by Z.ai
-
-This scaffold is optimized for use with [Z.ai](https://chat.z.ai) - your AI assistant for:
-
-- **💻 Code Generation** - Generate components, pages, and features instantly
-- **🎨 UI Development** - Create beautiful interfaces with AI assistance  
-- **🔧 Bug Fixing** - Identify and resolve issues with intelligent suggestions
-- **📝 Documentation** - Auto-generate comprehensive documentation
-- **🚀 Optimization** - Performance improvements and best practices
-
-Ready to build something amazing? Start chatting with Z.ai at [chat.z.ai](https://chat.z.ai) and experience the future of AI-powered development!
 
 ## 📁 Project Structure
 
 ```
 src/
-├── app/                 # Next.js App Router pages
-├── components/          # Reusable React components
-│   └── ui/             # shadcn/ui components
-├── hooks/              # Custom React hooks
-└── lib/                # Utility functions and configurations
+├── app/
+│   ├── api/                    # API endpoints
+│   │   ├── route.ts           # Main API with ZAI integration
+│   │   ├── geological/        # Geological data API
+│   │   └── consortium/        # Consortium management API
+│   ├── page.tsx               # Main dashboard
+│   ├── layout.tsx             # Root layout
+│   └── globals.css           # Global styles
+├── components/
+│   ├── ui/                    # shadcn/ui components
+│   ├── GeologicalVisualization.tsx    # 3D visualization
+│   ├── DataFusionInterface.tsx       # Data processing
+│   ├── AIModelDashboard.tsx          # AI monitoring
+│   ├── ConsortiumManagement.tsx      # Consortium admin
+│   └── ProjectProgressDashboard.tsx  # Progress tracking
+├── lib/
+│   ├── db.ts                  # Database client
+│   └── utils.ts               # Utility functions
+└── hooks/                     # Custom React hooks
 ```
 
-## 🎨 Available Features & Components
+## 🔧 Configuration
 
-This scaffold includes a comprehensive set of modern web development tools:
+### Environment Variables
+Create a `.env.local` file with:
+```env
+DATABASE_URL="file:./dev.db"
+NEXTAUTH_SECRET="your-secret-key"
+ZAI_API_KEY="your-zai-api-key"
+```
 
-### 🧩 UI Components (shadcn/ui)
-- **Layout**: Card, Separator, Aspect Ratio, Resizable Panels
-- **Forms**: Input, Textarea, Select, Checkbox, Radio Group, Switch
-- **Feedback**: Alert, Toast (Sonner), Progress, Skeleton
-- **Navigation**: Breadcrumb, Menubar, Navigation Menu, Pagination
-- **Overlay**: Dialog, Sheet, Popover, Tooltip, Hover Card
-- **Data Display**: Badge, Avatar, Calendar
+### AI Integration
+The platform uses the ZAI Web Development SDK for:
+- **Geological Analysis**: Expert-level interpretation of geological data
+- **Model Inference**: AI-powered mineral prospectivity analysis
+- **Synthetic Data Generation**: Training data for AI models
+- **Natural Language Processing**: Report generation and explanations
 
-### 📊 Advanced Data Features
-- **Tables**: Powerful data tables with sorting, filtering, pagination (TanStack Table)
-- **Charts**: Beautiful visualizations with Recharts
-- **Forms**: Type-safe forms with React Hook Form + Zod validation
+## 🎯 Usage Examples
 
-### 🎨 Interactive Features
-- **Animations**: Smooth micro-interactions with Framer Motion
-- **Drag & Drop**: Modern drag-and-drop functionality with DND Kit
-- **Theme Switching**: Built-in dark/light mode support
+### 3D Geological Visualization
+```typescript
+<GeologicalVisualization 
+  layers={customLayers}
+  deposits={depositData}
+  showGrid={true}
+  showConfidence={true}
+/>
+```
 
-### 🔐 Backend Integration
-- **Authentication**: Ready-to-use auth flows with NextAuth.js
-- **Database**: Type-safe database operations with Prisma
-- **API Client**: HTTP requests with Axios + TanStack Query
-- **State Management**: Simple and scalable with Zustand
+### AI Model Inference
+```typescript
+const response = await fetch('/api', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    action: 'run-model-inference',
+    model: 'pigan',
+    data: geologicalData,
+    parameters: { confidence: 0.8 }
+  })
+});
+```
 
-### 🌍 Production Features
-- **Internationalization**: Multi-language support with Next Intl
-- **Image Optimization**: Automatic image processing with Sharp
-- **Type Safety**: End-to-end TypeScript with Zod validation
-- **Essential Hooks**: 100+ useful React hooks with ReactUse for common patterns
+### Consortium Data Management
+```typescript
+const members = await fetch('/api/consortium?type=members');
+const deposits = await fetch('/api/consortium?type=deposits');
+```
 
-## 🤝 Get Started with Z.ai
+## 📊 Performance Metrics
 
-1. **Clone this scaffold** to jumpstart your project
-2. **Visit [chat.z.ai](https://chat.z.ai)** to access your AI coding assistant
-3. **Start building** with intelligent code generation and assistance
-4. **Deploy with confidence** using the production-ready setup
+### Target Performance
+- **Processing Speed**: 100,000 km² in <48 hours
+- **Model Accuracy**: >85% recall, <15% false positive rate
+- **System Availability**: 99.9% uptime
+- **Response Time**: <2 seconds for API requests
+
+### Monitoring
+- Real-time KPI dashboard
+- Automated alerting for performance degradation
+- Resource usage optimization
+- Quality metrics tracking
+
+## 🔒 Security & Privacy
+
+### Data Protection
+- **Anonymization**: 5km coordinate fuzzing for sensitive data
+- **Access Control**: Tier-based permission system
+- **Blockchain Provenance**: Immutable data tracking
+- **Secure Multi-party Computation**: Privacy-preserving analysis
+
+### API Security
+- Input validation and sanitization
+- Rate limiting and DDoS protection
+- Authentication and authorization
+- Audit logging
+
+## 🌐 Deployment
+
+### Production Build
+```bash
+npm run build
+npm start
+```
+
+### Docker Deployment
+```dockerfile
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+RUN npm run build
+EXPOSE 3000
+CMD ["npm", "start"]
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is part of Project Aurora 2.0 and subject to consortium agreements.
+
+## 📞 Support
+
+For technical support or questions:
+- Create an issue in the repository
+- Contact the development team
+- Consult the documentation
 
 ---
 
-Built with ❤️ for the developer community. Supercharged by [Z.ai](https://chat.z.ai) 🚀
+**Project Aurora 2.0** - Transforming mineral exploration through AI and satellite intelligence.
