@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
@@ -30,11 +31,29 @@ import {
   Shield,
   Eye,
   Map,
-  Projector
+  Projector,
+  FileText
 } from "lucide-react";
 
 export default function OSIDashboard() {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState("overview");
+
+  const handleStartTraining = () => {
+    alert('Starting AI model training... This will initiate the training pipeline for all active models.');
+  };
+
+  const handleScheduleReview = () => {
+    alert('Opening review scheduler... This will open a calendar to schedule project reviews.');
+  };
+
+  const handleExportData = () => {
+    alert('Exporting data... This will download a comprehensive report of all platform data.');
+  };
+
+  const handleConfigure = () => {
+    alert('Opening configuration panel... This will open system settings and model parameters.');
+  };
 
   const projectPhases = [
     {
@@ -139,11 +158,33 @@ export default function OSIDashboard() {
               </h1>
               <p className="text-slate-600 mt-2">Orbital Subsurface Intelligence (OSI) Platform</p>
             </div>
-            <Badge variant="secondary" className="text-sm px-3 py-1">
-              <Activity className="w-4 h-4 mr-1" />
-              Live Monitoring
-            </Badge>
+            <div className="flex items-center gap-3">
+              <Badge variant="secondary" className="text-sm px-3 py-1">
+                <Activity className="w-4 h-4 mr-1" />
+                Live Monitoring
+              </Badge>
+            </div>
           </div>
+        </div>
+
+        {/* Quick Navigation */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <Button variant="outline" onClick={() => router.push('/training')}>
+            <Brain className="w-4 h-4 mr-2" />
+            Training
+          </Button>
+          <Button variant="outline" onClick={() => router.push('/reports')}>
+            <FileText className="w-4 h-4 mr-2" />
+            Reports
+          </Button>
+          <Button variant="outline" onClick={() => router.push('/settings')}>
+            <Settings className="w-4 h-4 mr-2" />
+            Settings
+          </Button>
+          <Button variant="outline" onClick={() => router.push('/members')}>
+            <Users className="w-4 h-4 mr-2" />
+            Members
+          </Button>
         </div>
 
         {/* Key Metrics */}

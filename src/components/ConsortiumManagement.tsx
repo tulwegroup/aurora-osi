@@ -73,6 +73,14 @@ export default function ConsortiumManagement() {
   const [selectedTier, setSelectedTier] = useState("all");
   const [selectedRegion, setSelectedRegion] = useState("all");
 
+  const handleAddMember = () => {
+    alert('Opening member registration form... This will open a form to add new consortium members.');
+  };
+
+  const handleExportData = () => {
+    alert('Exporting consortium data... This will download a comprehensive report of all consortium data.');
+  };
+
   const consortiumMembers: ConsortiumMember[] = [
     {
       id: "1",
@@ -261,11 +269,11 @@ export default function ConsortiumManagement() {
               <SelectItem value="asia">Asia</SelectItem>
             </SelectContent>
           </Select>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" onClick={handleExportData}>
             <Download className="w-4 h-4 mr-2" />
             Export Data
           </Button>
-          <Button size="sm">
+          <Button size="sm" onClick={handleAddMember}>
             <Plus className="w-4 h-4 mr-2" />
             Add Member
           </Button>

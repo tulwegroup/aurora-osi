@@ -59,6 +59,14 @@ export default function AIModelDashboard() {
   const [activeTab, setActiveTab] = useState("performance");
   const [selectedModel, setSelectedModel] = useState("pigan");
 
+  const handleStartTraining = () => {
+    alert('Starting AI model training... This will initiate training pipeline for all active models.');
+  };
+
+  const handleConfigure = () => {
+    alert('Opening configuration panel... This will open system settings and model parameters.');
+  };
+
   const modelPerformance: ModelPerformance[] = [
     {
       model: "PI-GAN",
@@ -198,11 +206,11 @@ export default function AIModelDashboard() {
           <p className="text-slate-600">Real-time model performance and validation metrics</p>
         </div>
         <div className="flex items-center gap-3">
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" onClick={handleConfigure}>
             <Settings className="w-4 h-4 mr-2" />
             Configure
           </Button>
-          <Button size="sm">
+          <Button size="sm" onClick={handleStartTraining}>
             <Play className="w-4 h-4 mr-2" />
             Start Training
           </Button>

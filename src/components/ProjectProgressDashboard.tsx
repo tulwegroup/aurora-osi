@@ -69,6 +69,14 @@ export default function ProjectProgressDashboard() {
   const [activeTab, setActiveTab] = useState("overview");
   const [selectedTimeframe, setSelectedTimeframe] = useState("monthly");
 
+  const handleScheduleReview = () => {
+    alert('Opening review scheduler... This will open a calendar to schedule project reviews.');
+  };
+
+  const handleExportData = () => {
+    alert('Exporting data... This will download a comprehensive report of all project data.');
+  };
+
   const milestones: ProjectMilestone[] = [
     {
       id: "1",
@@ -299,11 +307,11 @@ export default function ProjectProgressDashboard() {
             <option value="monthly">Monthly</option>
             <option value="quarterly">Quarterly</option>
           </select>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" onClick={handleExportData}>
             <FileText className="w-4 h-4 mr-2" />
             Export Report
           </Button>
-          <Button size="sm">
+          <Button size="sm" onClick={handleScheduleReview}>
             <Calendar className="w-4 h-4 mr-2" />
             Schedule Review
           </Button>
